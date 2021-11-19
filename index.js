@@ -1,45 +1,47 @@
-// Input: a (number), b (number)
-// Action: Add both numbers together
-// Output: The result (number)
-function add() {
-    // write your code here
-  }
+let numberSum
+function add(a, b) {
+    sum = a+b
+    numberSum = sum
+    return sum
+}
+
+function isEven() {
+    if(numberSum %2 === 0) return true
+    else return false
+}
   
-  // Input: number
-  // Action: Check if the number given is even or not
-  // Output: The result (boolean)
-  function isEven() {
-    // write your code here
-  }
+function greet(name) {
+    alert(`Welcome to the club ${name}`)
+}
+
+function isAnAdult(age) {
+    if(age<18) return false
+    else if(isNaN(age)) alert("Enter an integer next time!") 
+    else return true
+    
+}
+
+function yearsToAdulthood(age) {
+    if(age<18) yearsToBecomeAdult = 18-age
+    return yearsToBecomeAdult
+}
   
-  // Input: name (string)
-  // Action: Greet the user by name
-  // Output: The greeting (string)
-  function greet() {
-    // write your code here
-  }
-  
-  // Input: age (number)
-  // Action: Check if the age is 18 or over
-  // Output: The result (boolean)
-  function isAnAdult() {
-    // write your code here
-  }
-  
-  // Input: age (number)
-  // Action: Check how many years are left until adulthood (18)
-  // Output: The result (number)
-  function yearsToAdulthood() {
-    // write your code here
-  }
-  
-  // Input: person ({ age: number, name: string })
-  // Action:
-  //   - check if a person is an adult
-  //   - if they are, greet them
-  //   - if they are not, tell them to come back in X years (when they are)
-  // Output: The result (string)
-  function admit() {
-    // write your code here
-    // use greet, isAnAdult and yearsToAdulthood to help you!
-  }
+function admit(user) {
+    if(isAnAdult(user.age)){
+        greet(user.name)
+        return `${user.name} entered the club`
+    }else {
+        alert(`Come back after ${yearsToAdulthood(user.age)} years ${user.name}.\n\n You are too young to enter the night-club!!!!`)
+        return `${user.name} is too young to enter the club`
+    }
+      
+}
+
+nameOfUser = prompt("Enter your name below: \n")
+ageOfUser = Number(prompt("Enter your current age below: \n"))
+const user={
+      name: nameOfUser, 
+      age: ageOfUser
+    }
+
+  admit(user)
